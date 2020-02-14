@@ -2,7 +2,8 @@ import string
 import numpy as np
 from matplotlib import pylab as plt
 from matplotlib.pylab import *
-import pyfits
+#import 
+from astropy.io import fits
 import scipy.optimize
 from numpy import *
 
@@ -349,10 +350,13 @@ class data():
         """Convert one scan to Fits data format put into filename.fits"""
         #
         nbits=16
-        hdu = pyfits.PrimaryHDU(int16(self.Ta[scan]))
+        #hdu = pyfits.PrimaryHDU(int16(self.Ta[scan]))
+        #hdu.writeto('fits/'+str(filename)+'.fits',clobber=True)
+        hdu = fits.PrimaryHDU(int16(self.Ta[scan]))
         hdu.writeto('fits/'+str(filename)+'.fits',clobber=True)
         
-        hdulist = pyfits.open(str(filename)+'.fits',mode='update')
+        hdulist = fits.open(str(filename)+'.fits',  mode='update')
+        #hdulist = pyfits.open(str(filename)+'.fits',mode='update')
         prihdr = hdulist[0].header
         prihdr.update('BITPIX',nbits)
         prihdr.update('BSCALE',1)
@@ -392,11 +396,15 @@ class data():
     def aveToFits(self, filename, mydata):
         """Convert the data to Fits data format put into filename.fits"""
         #
+ 
         nbits=16
-        hdu = pyfits.PrimaryHDU(int16(mydata))
+        #hdu = pyfits.PrimaryHDU(int16(self.Ta[scan]))
+        #hdu.writeto('fits/'+str(filename)+'.fits',clobber=True)
+        hdu = fits.PrimaryHDU(int16(self.Ta[scan]))
         hdu.writeto('fits/'+str(filename)+'.fits',clobber=True)
         
-        hdulist = pyfits.open('fits/'+str(filename)+'.fits',mode='update')
+        hdulist = fits.open(str(filename)+'.fits',  mode='update')
+        #hdulist = pyfits.open(str(filename)+'.fits',mode='update')
         prihdr = hdulist[0].header
         prihdr.update('BITPIX',nbits)
         prihdr.update('BSCALE',1)
