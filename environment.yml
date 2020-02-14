@@ -1,8 +1,9 @@
 name: radio-astro
 
 dependencies:
-  - astropy=3
-  - matplotlib==3.0.2
-  - numpy>=1.15
+  - python=2.7
+  - astropy
+  - matplotlib
+  - numpy
   - astropy
   - scipy
