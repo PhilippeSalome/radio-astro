@@ -1,10 +1,8 @@
 import numpy
-import pyfits
 import math
 from math import *
 from numpy import *
 import numpy as np
-from pyfits import *
 from matplotlib import pylab as plt
 from matplotlib import *
 from mpl_toolkits.mplot3d import Axes3D
