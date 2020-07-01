@@ -1,7 +1,7 @@
 name: radio-astro
 
 dependencies:
-  - python=2.7
+  - python=3.0
   - astropy
   - matplotlib
   - numpy
