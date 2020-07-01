@@ -25,8 +25,8 @@ class data():
         f = open(filename, 'r')
         self.lines=f.readlines()
         f.close()
-        self.lines = map(string.strip,self.lines)
-        self.elts = map(string.split,self.lines)
+        self.lines = list(map(str.strip,self.lines))
+        self.elts = list(map(str.split,self.lines))
         for i in range(len(self.lines)):
             if (len(self.elts[i]) > 6) and ((self.elts[i][5]=='galactic') or (self.elts[i][5]=='CygEMN') or (self.elts[i][5]=='Sun') ) :
                 self.lon=float(self.elts[i][6])
