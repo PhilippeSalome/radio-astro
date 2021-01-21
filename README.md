@@ -3,3 +3,5 @@
 
 Teaching material for HI observations of the Milky way. Rotation curves, spiral arms.
 Data from pedagogical 2.3m antenna and archival data from the LAB survey
+
+Note : Some scripts do not work with binder (data to large).
